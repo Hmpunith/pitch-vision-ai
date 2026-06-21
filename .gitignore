@@ -1,0 +1,36 @@
+# Environment
+.env
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Node (if added later)
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+
+# Video generation assets
+video-generator/recordings/
+video-generator/audio/
+video-generator/voiceover.mp3
+video-generator/audio_inputs.txt
+video-generator/latest_recording.json

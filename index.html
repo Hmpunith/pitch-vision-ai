@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch-Vision AI - Tactical Intelligence Briefing Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;700&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body class="briefing-deck-body">
+
+    <!-- Glowing Vector Overlay Grid & CRT Scanlines -->
+    <div class="deck-scanlines"></div>
+    <div class="deck-grid-bg"></div>
+
+    <!-- Top Navigation HUD -->
+    <header class="deck-navbar">
+        <div class="nav-logo">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FF0033" stroke-width="2" class="pulse-logo">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+                <circle cx="12" cy="12" r="5" stroke="#FFFFFF" />
+            </svg>
+            <span class="logo-text">PITCH-VISION <span class="accent-red">AI</span></span>
+        </div>
+        <div class="nav-status">
+            <span class="pulse-dot-red"></span>
+            <span class="hud-status-label">CLASSIFIED BRIEFING SYSTEM · COGNITIVE CORE v3.0</span>
+        </div>
+    </header>
+
+    <!-- Section 1: Operations briefing (Hero Split Layout) -->
+    <section class="section-hero">
+        <div class="hero-split-container">
+            <!-- Left: Hero Text briefs -->
+            <div class="hero-text-block">
+                <div class="mission-briefing-tag">
+                    <span class="hud-bracket-left">[</span>
+                    <span class="hud-tag-text">SYS.OPR_009 BRIEFING</span>
+                    <span class="hud-bracket-right">]</span>
+                </div>
+                
+                <h1 class="massive-title">
+                    EXPLAINABLE AI<br />
+                    FOR <span class="text-red">ELITE MATCHPLAY.</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Pitch-Vision AI unifies optical match telemetry, wearable biometrics, and IFAB law books into a single explaining engine. Detect vulnerabilities earlier. Verify referee rulings objectively. Optimize cardiorespiratory loads.
+                </p>
+                
+                <div class="hero-status-pills">
+                    <div class="status-pill"><span class="led green"></span>10Hz OPTICAL GRID</div>
+                    <div class="status-pill"><span class="led red"></span>GRANITE Core 3.0</div>
+                    <div class="status-pill"><span class="led white"></span>IFAB Law Cache</div>
+                </div>
+            </div>
+
+            <!-- Right: Interactive SVG Hologram Radar -->
+            <div class="hero-radar-wrapper">
+                <div class="radar-decoration-ring ring-1"></div>
+                <div class="radar-decoration-ring ring-2"></div>
+                <svg class="hologram-radar-svg" viewBox="0 0 400 400" width="380" height="380">
+                    <!-- Outer Concentric Circles -->
+                    <circle cx="200" cy="200" r="180" stroke="rgba(255, 0, 51, 0.12)" stroke-width="1" fill="none" />
+                    <circle cx="200" cy="200" r="140" stroke="rgba(255, 0, 51, 0.2)" stroke-dasharray="6,6" stroke-width="1.5" fill="none" />
+                    <circle cx="200" cy="200" r="90" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" fill="none" />
+                    <circle cx="200" cy="200" r="40" stroke="rgba(255, 0, 51, 0.35)" stroke-width="1.5" fill="none" />
+                    
+                    <!-- Crosshairs -->
+                    <line x1="20" y1="200" x2="380" y2="200" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+                    <line x1="200" y1="20" x2="200" y2="380" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+                    
+                    <!-- Pulsing Radar Target Points (Players) -->
+                    <g class="radar-ping" transform="translate(140, 160)">
+                        <circle cx="0" cy="0" r="4" fill="#FF0033" />
+                        <circle cx="0" cy="0" r="12" stroke="#FF0033" stroke-width="1" fill="none" class="ping-wave" />
+                        <text x="8" y="4" fill="rgba(255,255,255,0.7)" font-family="Share Tech Mono" font-size="8">ARG_10 [MESSI]</text>
+                    </g>
+                    <g class="radar-ping" transform="translate(250, 240)">
+                        <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+                        <circle cx="0" cy="0" r="10" stroke="#FFFFFF" stroke-width="1" fill="none" class="ping-wave" />
+                        <text x="8" y="4" fill="rgba(255,255,255,0.7)" font-family="Share Tech Mono" font-size="8">FRA_10 [MBAPPÉ]</text>
+                    </g>
+
+                    <!-- Zone 14 Shaded Attacking Boundary -->
+                    <path d="M160 170 L240 170 L250 220 L150 220 Z" fill="rgba(255, 0, 51, 0.06)" stroke="rgba(255, 0, 51, 0.3)" stroke-width="1" />
+                    
+                    <!-- Spinning Scanner Line -->
+                    <line x1="200" y1="200" x2="20" y2="72" stroke="url(#scanner-gradient)" stroke-width="2.5" class="scanner-sweep" />
+                    
+                    <defs>
+                        <linearGradient id="scanner-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="rgba(255, 0, 51, 0)" />
+                            <stop offset="100%" stop-color="#FF0033" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Challenge Layout -->
+    <section class="section-challenge">
+        <div class="challenge-split">
+            <div class="brief-title-block">
+                <span class="hud-mini-indicator"></span>
+                <h2 class="sub-massive">THE COGNITIVE GAP IN MODERN MATCHPLAY</h2>
+            </div>
+            <p class="challenge-text">
+                Traditional match analytics treat positioning, human exertion, and law enforcement separately.<br />
+                <span class="text-red">PITCH-VISION UNIFIES THEM IN REAL-TIME.</span>
+            </p>
+        </div>
+
+        <div class="hud-deck-grid">
+            <div class="hud-capsule">
+                <div class="hud-capsule-header">
+                    <span class="capsule-status-dot red"></span>
+                    <span class="capsule-id">MOD_SPATIAL</span>
+                </div>
+                <div class="hud-capsule-body">
+                    <h3>SPATIAL DIAGNOSTICS</h3>
+                    <p>Calculates dynamic Expected Threat (xT) map vectors, PPDA high-pressing indicators, and spatial gaps between CB rows.</p>
+                    <div class="telemetry-bar-label">xT COMPLIANCE: 82%</div>
+                    <div class="capsule-metric-bar"><div class="fill red" style="width: 82%"></div></div>
+                </div>
+            </div>
+            
+            <div class="hud-capsule">
+                <div class="hud-capsule-header">
+                    <span class="capsule-status-dot white"></span>
+                    <span class="capsule-id">MOD_BIOMETRIC</span>
+                </div>
+                <div class="hud-capsule-body">
+                    <h3>PHYSICAL EXERTION</h3>
+                    <p>Integrates cardiorespiratory strain metrics, real-time hydration volume levels, and muscular recovery curve indices.</p>
+                    <div class="telemetry-bar-label">BIOMETRIC LOAD: 64%</div>
+                    <div class="capsule-metric-bar"><div class="fill white" style="width: 64%"></div></div>
+                </div>
+            </div>
+
+            <div class="hud-capsule">
+                <div class="hud-capsule-header">
+                    <span class="capsule-status-dot red"></span>
+                    <span class="capsule-id">MOD_CONTEXT</span>
+                </div>
+                <div class="hud-capsule-body">
+                    <h3>MATCH CONTEXT</h3>
+                    <p>Builds dynamic situational models reacting to temporal shifts, current score states, and active team structures.</p>
+                    <div class="telemetry-bar-label">MODEL WEIGHT: 48%</div>
+                    <div class="capsule-metric-bar"><div class="fill red" style="width: 48%"></div></div>
+                </div>
+            </div>
+
+            <div class="hud-capsule">
+                <div class="hud-capsule-header">
+                    <span class="capsule-status-dot white"></span>
+                    <span class="capsule-id">MOD_REGULATION</span>
+                </div>
+                <div class="hud-capsule-body">
+                    <h3>IFAB COMPLIANCE</h3>
+                    <p>Performs sub-pixel offside guidelines checks, arm silhouette calculations, and G-force tackle severity checks.</p>
+                    <div class="telemetry-bar-label">LAW COVERAGE: 76%</div>
+                    <div class="capsule-metric-bar"><div class="fill white" style="width: 76%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Architecture Briefing (Rewritten to be a Horizontal Pipeline Flow Map) -->
+    <section class="section-architecture">
+        <div class="mission-briefing-tag align-center">
+            <span class="hud-bracket-left">[</span>
+            <span class="hud-tag-text">PITCH-VISION DISTRIBUTED PROCESSING PIPELINE</span>
+            <span class="hud-bracket-right">]</span>
+        </div>
+        <h2 class="massive-title align-center">
+            COGNITIVE INTAKE TO DIAGNOSTIC PROCESS
+        </h2>
+
+        <!-- Pipeline horizontal flow diagram -->
+        <div class="pipeline-flow-container">
+            
+            <!-- Step 1: Telemetry Intake -->
+            <div class="pipeline-step">
+                <div class="pipeline-node-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FF0033" stroke-width="2">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                        <line x1="4" y1="22" x2="4" y2="15" />
+                    </svg>
+                </div>
+                <div class="hud-capsule pipeline-card">
+                    <span class="pipeline-step-num">STAGE 01</span>
+                    <h3>TELEMETRY INTAKE</h3>
+                    <span class="pipeline-meta">10Hz Raw Coordinates</span>
+                    <p>Reads FIFA coordinates telemetry and wearable sensors stream data packages.</p>
+                </div>
+            </div>
+
+            <div class="pipeline-connector-line">
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Step 2: Edge Agents -->
+            <div class="pipeline-step">
+                <div class="pipeline-node-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFFFFF" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                    </svg>
+                </div>
+                <div class="hud-capsule pipeline-card">
+                    <span class="pipeline-step-num">STAGE 02</span>
+                    <h3>ORBITAL sub-AGENTS</h3>
+                    <span class="pipeline-meta">Edge Pre-Computing</span>
+                    <p>Tactical, Physical, and Context sub-agents isolate raw telemetry into metrics.</p>
+                </div>
+            </div>
+
+            <div class="pipeline-connector-line">
+                <div class="pulse-dot delay-1"></div>
+            </div>
+
+            <!-- Step 3: Granite Supervisory Orchestrator -->
+            <!-- Playwright Target: arch-card containing "IBM GRANITE ENGINE" -->
+            <div class="pipeline-step">
+                <div class="pipeline-node-icon gold">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFAE00" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
+                        <line x1="12" y1="2" x2="12" y2="22" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                    </svg>
+                </div>
+                <div class="hud-capsule pipeline-card arch-card highlight-card">
+                    <span class="pipeline-step-num text-gold">STAGE 03</span>
+                    <h3>IBM GRANITE ENGINE</h3>
+                    <span class="pipeline-meta text-gold">Supervisory Orchestrator</span>
+                    <p>The central cognitive core. Synthesizes metrics and regulations into natural, explainable feedback.</p>
+                </div>
+            </div>
+
+            <div class="pipeline-connector-line">
+                <div class="pulse-dot delay-2"></div>
+            </div>
+
+            <!-- Step 4: Diagnosis Output -->
+            <div class="pipeline-step">
+                <div class="pipeline-node-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FF0033" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                </div>
+                <div class="hud-capsule pipeline-card tall-card">
+                    <span class="pipeline-step-num">STAGE 04</span>
+                    <h3>ATTRIBUTION COCKPIT</h3>
+                    <span class="pipeline-meta">Explainable Feedback</span>
+                    <div class="hologram-chart-box">
+                        <div class="chart-bar-row">
+                            <div class="bar-info"><span>TACTICAL WEIGHT</span><span class="text-red">52%</span></div>
+                            <div class="bar-track"><div class="fill bg-red" style="width: 52%"></div></div>
+                        </div>
+                        <div class="chart-bar-row">
+                            <div class="bar-info"><span>PHYSICAL EXERTION</span><span>35%</span></div>
+                            <div class="bar-track"><div class="fill bg-white" style="width: 35%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4: Live Data Feeds -->
+    <section class="section-data">
+        <div class="mission-briefing-tag align-center">
+            <span class="hud-bracket-left">[</span>
+            <span class="hud-tag-text">VALIDATED INTEGRATED DATA CHANNELS</span>
+            <span class="hud-bracket-right">]</span>
+        </div>
+        <h2 class="massive-title align-center">
+            PROVEN WITH REAL-WORLD DATASETS
+        </h2>
+
+        <!-- Split Layout instead of card grid -->
+        <div class="data-channels-split">
+            <!-- Left: optical telemetry simulator block -->
+            <div class="channel-telemetry-console">
+                <div class="console-header">
+                    <span class="console-lbl">10Hz DATA API OUTPUT STREAM</span>
+                    <span class="console-led green"></span>
+                </div>
+                <div class="console-body">
+<span class="c-info">[API] Optical Feed online (Lusail Iconic Stadium)</span>
+<span class="c-info">[API] Frequency: 10Hz | Latency: 1.2ms</span>
+<span>[DATA] XY coordinate frames synchronized:</span>
+<span class="c-success">{"frame": 4920, "ball": {"x": 52.4, "y": 28.1}, "args": [{"id": 10, "x": 35.1}]}</span>
+<span class="c-success">{"frame": 4921, "ball": {"x": 53.0, "y": 27.8}, "args": [{"id": 10, "x": 35.5}]}</span>
+<span class="c-warn">[WARN] Strain anomaly detected on player_10 (Messi)</span>
+                </div>
+            </div>
+
+            <!-- Right: descriptions -->
+            <div class="channel-descriptions">
+                <div class="hud-capsule channel-card">
+                    <h3>OPTICAL TELEMETRY STREAMING</h3>
+                    <p class="channel-desc">Our replay engine actively processes real match telemetry JSON files at 10Hz, injecting authentic player coordinates, passing vectors, and pitch control parameters into the live workspace.</p>
+                </div>
+                <div class="hud-capsule channel-card">
+                    <h3>MATHEMATICAL BIOMETRIC MODELS</h3>
+                    <p class="channel-desc">Because raw optical coordinate feeds do not broadcast biological metrics, we run continuous physics models that calculate heart rate strain, sweat dehydration, and joint angles dynamically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Operation Launcher -->
+    <section class="section-cta">
+        <h1 class="cta-massive-title">
+            EVERY PLAY TELLS A STORY.<br />
+            <span class="text-red">PITCH-VISION AI EXPLAINS IT.</span>
+        </h1>
+        
+        <div class="cta-action-container">
+            <a href="app.html" class="launch-btn-final">
+                LAUNCH COMMAND CENTER HUD
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>

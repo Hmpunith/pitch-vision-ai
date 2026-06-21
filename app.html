@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch-Vision AI - Broadcaster Telestrator & VAR Calibration Platform</title>
+    <!-- Google Fonts: Outfit (Technical/Headers) & Inter (UI/Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cinematic Splash Screen -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="splash-particles" id="splash-particles"></div>
+        <svg class="splash-logo-hex" viewBox="0 0 80 80" fill="none">
+            <polygon points="40 4 74 22 74 58 40 76 6 58 6 22" stroke="#FF0033" stroke-width="2" fill="none" opacity="0.6" />
+            <polygon points="40 14 64 28 64 52 40 66 16 52 16 28" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.4" />
+            <circle cx="40" cy="40" r="12" stroke="#FF0033" stroke-width="2" fill="none" />
+            <circle cx="40" cy="40" r="4" fill="#FF0033" opacity="0.8" />
+            <line x1="40" y1="4" x2="40" y2="76" stroke="rgba(0,255,144,0.15)" stroke-width="1" />
+            <line x1="6" y1="40" x2="74" y2="40" stroke="rgba(0,225,255,0.15)" stroke-width="1" />
+        </svg>
+        <div class="splash-title">PITCH-VISION AI</div>
+        <div class="splash-subtitle">TACTICAL INTELLIGENCE · EXPLAINABLE AI · FIFA WORLD CUP 2022</div>
+        <div class="splash-bar-container">
+            <div class="splash-bar-fill"></div>
+        </div>
+        <div class="splash-status">INITIALIZING IBM GRANITE CORE ENGINE...</div>
+    </div>
+
+    <!-- CRT Scanline Overlay -->
+    <div class="scanline-overlay"></div>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Left Sidebar Navigation -->        <aside class="sidebar">
+            <!-- Asymmetrical Cybernetic Brand Reticle -->
+            <div class="brand">
+                <div class="brand-logo-reticle">
+                    <svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke-width="2" class="spinning-reticle">
+                        <circle cx="20" cy="20" r="16" stroke="rgba(255,255,255,0.05)" />
+                        <path d="M20 4 A 16 16 0 0 1 36 20" stroke="#FF0033" stroke-width="2" />
+                        <polygon points="20 12 27 24 13 24" fill="#FFFFFF" opacity="0.8" />
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>PITCH-VISION</h1>
+                    <span class="brand-tag">CLASSIFIED DECK v3.0</span>
+                </div>
+            </div>
+
+            <!-- Telemetry Selector Plates -->
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="command-center">
+                    <span class="nav-laser-glow"></span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                    </svg>
+                    <span>COMMAND CENTER</span>
+                    <span class="nav-mono-code">CMD_01</span>
+                </button>
+                <button class="nav-item" data-tab="telestrator">
+                    <span class="nav-laser-glow"></span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+                        <path d="M12 6v6l4 2" stroke="#FF0033" />
+                        <circle cx="12" cy="12" r="2" fill="#FF0033" />
+                    </svg>
+                    <span>3D TELESTRATOR</span>
+                    <span class="nav-mono-code">TEL_02</span>
+                </button>
+                <button class="nav-item" data-tab="var-lab">
+                    <span class="nav-laser-glow"></span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" stroke="#FFFFFF" />
+                        <circle cx="8" cy="12" r="3" />
+                    </svg>
+                    <span>VAR CALIBRATION</span>
+                    <span class="nav-mono-code">VAR_03</span>
+                </button>
+                <button class="nav-item" data-tab="biometrics">
+                    <span class="nav-laser-glow"></span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#FF2D55" />
+                    </svg>
+                    <span>BIOMETRICS HUD</span>
+                    <span class="nav-mono-code">BIO_04</span>
+                </button>
+                <button class="nav-item" data-tab="agent-network">
+                    <span class="nav-laser-glow"></span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="5" r="3" />
+                        <circle cx="5" cy="19" r="3" />
+                        <circle cx="19" cy="19" r="3" />
+                        <path d="M12 8v8M5 16l5-3M19 16l-5-3" />
+                    </svg>
+                    <span>AGENT TOPOLOGY</span>
+                    <span class="nav-mono-code">NET_05</span>
+                </button>
+            </nav>
+
+            <!-- Holographic Info Card Footer -->
+            <div class="sidebar-footer">
+                <div class="hologram-footer-monitor">
+                    <div class="monitor-logo-row">
+                        <svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke-width="1.5" class="spinning-radar">
+                            <circle cx="20" cy="20" r="18" stroke="rgba(255, 0, 51, 0.2)" stroke-dasharray="2,4" />
+                            <circle cx="20" cy="20" r="10" stroke="rgba(255, 255, 255, 0.05)" />
+                            <line x1="20" y1="2" x2="20" y2="38" stroke="rgba(255, 0, 51, 0.1)" />
+                            <line x1="20" y1="20" x2="32" y2="10" stroke="#FF0033" />
+                        </svg>
+                        <div class="monitor-txt">
+                            <span class="m-lbl">SUPERVISORY CORE</span>
+                            <span class="m-val text-green">IBM GRANITE ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="monitor-sub-info">
+                        <span>ENGINE STATUS: STABLE (8B-Instruct)</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Top Broadcast Header -->
+            <header class="broadcast-header">
+                <div class="broadcast-badge">
+                    <span class="pulse-red"></span>
+                    <span class="badge-text">LIVE BROADCAST TELEMETRY FEED (10Hz)</span>
+                </div>
+                <div class="match-hud">
+                    <div class="team team-home">
+                        <span class="team-flag arg"></span>
+                        <span class="team-name">ARG</span>
+                    </div>
+                    <div class="score-display">
+                        <span class="score-number" id="home-score">2</span>
+                        <span class="score-colon">:</span>
+                        <span class="score-number" id="away-score">2</span>
+                    </div>
+                    <div class="team team-away">
+                        <span class="team-name">FRA</span>
+                        <span class="team-flag fra"></span>
+                    </div>
+                    <div class="match-time" id="hud-match-time">82:14</div>
+                    <div class="match-period">2ND HALF</div>
+                </div>
+                <div class="stadium-hud">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>LUSAIL ICONIC STADIUM, DOHA</span>
+                </div>
+            </header>
+
+            <!-- Workspace Pages -->
+            <div class="workspace-viewport">
+                
+                <!-- View 1: Command Center -->
+                <section class="workspace-tab-content active" id="command-center">
+                    <div class="command-center-layout">
+                                                <!-- Top Analytics Row -->
+                        <div class="analytics-summary-row">
+                            <div class="stat-card circular-gauge-card">
+                                <div class="gauge-outer-ring">
+                                    <svg viewBox="0 0 36 36" class="gauge-svg" width="60" height="60">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3" />
+                                        <path id="gauge-xt-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#FF0033" stroke-width="3" stroke-dasharray="14, 100" />
+                                    </svg>
+                                    <div class="gauge-val text-crimson" id="xt-gap-val">-0.14</div>
+                                </div>
+                                <div class="gauge-info">
+                                    <span class="stat-label">EXPECTED THREAT (xT) GAP</span>
+                                    <span class="stat-desc">Argentina CB gap stretched</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card circular-gauge-card">
+                                <div class="gauge-outer-ring">
+                                    <svg viewBox="0 0 36 36" class="gauge-svg" width="60" height="60">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3" />
+                                        <path id="gauge-ppda-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#00FF90" stroke-width="3" stroke-dasharray="58, 100" />
+                                    </svg>
+                                    <div class="gauge-val text-green" id="ppda-val">5.8</div>
+                                </div>
+                                <div class="gauge-info">
+                                    <span class="stat-label">PRESSING INTENSITY (PPDA)</span>
+                                    <span class="stat-desc">France high block active</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card circular-gauge-card">
+                                <div class="gauge-outer-ring">
+                                    <svg viewBox="0 0 36 36" class="gauge-svg" width="60" height="60">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3" />
+                                        <path id="gauge-tilt-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#FFAE00" stroke-width="3" stroke-dasharray="74, 100" />
+                                    </svg>
+                                    <div class="gauge-val text-yellow" id="field-tilt-val">74%</div>
+                                </div>
+                                <div class="gauge-info">
+                                    <span class="stat-label">FIELD TILT (LAST 5M)</span>
+                                    <span class="stat-desc">Territory dominance shifted</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card circular-gauge-card">
+                                <div class="gauge-outer-ring">
+                                    <svg viewBox="0 0 36 36" class="gauge-svg" width="60" height="60">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3" />
+                                        <path id="gauge-confidence-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#00E1FF" stroke-width="3" stroke-dasharray="94, 100" />
+                                    </svg>
+                                    <div class="gauge-val text-cyan" id="confidence-val">94.8%</div>
+                                </div>
+                                <div class="gauge-info">
+                                    <span class="stat-label">DECISION CONFIDENCE</span>
+                                    <span class="stat-desc">Granite agent consensus</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Core Diagnostics Grid -->
+                        <div class="diagnostics-grid">
+                            <!-- Left: Momentum Trend Card -->
+                            <div class="dashboard-card md-span-2">
+                                <div class="card-header">
+                                    <h3>EXPECTED GOALS (xG) & MOMENTUM TIMELINE</h3>
+                                    <span class="card-tag">TEMPORAL SHIFT ANALYZER</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="momentum-chart-container">
+                                        <!-- Inline SVG for Momentum Line Chart -->
+                                        <svg id="momentum-svg-chart" viewBox="0 0 600 220" width="100%" height="100%">
+                                            <defs>
+                                                <linearGradient id="gradient-arg" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+                                                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+                                                </linearGradient>
+                                                <linearGradient id="gradient-fra" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="#FF2D55" stop-opacity="0.3"/>
+                                                    <stop offset="100%" stop-color="#FF2D55" stop-opacity="0.0"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <!-- Grid Lines -->
+                                            <line x1="50" y1="20" x2="570" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                            <line x1="50" y1="70" x2="570" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                            <line x1="50" y1="120" x2="570" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                            <line x1="50" y1="170" x2="570" y2="170" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                            <!-- Midfield Axis -->
+                                            <line x1="50" y1="120" x2="570" y2="120" stroke="rgba(255,255,255,0.2)" stroke-dasharray="4" stroke-width="1" />
+                                            
+                                            <!-- Chart Slopes will be animated / loaded by JS -->
+                                            <path id="path-arg-fill" d="" fill="url(#gradient-arg)" />
+                                            <path id="path-fra-fill" d="" fill="url(#gradient-fra)" />
+                                            <path id="path-arg" d="" fill="none" stroke="#FFFFFF" stroke-width="2.5" />
+                                            <path id="path-fra" d="" fill="none" stroke="#FF2D55" stroke-width="2.5" />
+                                            
+                                            <!-- Current Time Indicator -->
+                                            <line id="momentum-time-indicator" x1="420" y1="10" x2="420" y2="190" stroke="#FF0033" stroke-width="1.5" stroke-dasharray="2" />
+                                            <circle id="momentum-indicator-dot" cx="420" cy="120" r="4" fill="#FF0033" />
+                                            
+                                            <!-- X Axis Labels -->
+                                            <text x="50" y="210" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Outfit">70'</text>
+                                            <text x="175" y="210" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Outfit">75'</text>
+                                            <text x="300" y="210" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Outfit">80' (Sub)</text>
+                                            <text x="420" y="210" fill="#FF0033" font-size="10" font-family="Outfit" font-weight="bold">82:14</text>
+                                            <text x="550" y="210" fill="rgba(255,255,255,0.3)" font-size="10" font-family="Outfit">90'</text>
+                                        </svg>
+                                    </div>
+                                    <div class="momentum-legend">
+                                        <div class="legend-item"><span class="legend-dot arg"></span><span>ARGENTINA CONTROL</span></div>
+                                        <div class="legend-item"><span class="legend-dot fra"></span><span>FRANCE PRESSURE INTRUSION</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: IBM Granite Tactical Oracle Chat -->
+                            <div class="dashboard-card command-chat-card">
+                                <div class="card-header">
+                                    <h3>IBM GRANITE COGNITIVE ORACLE</h3>
+                                    <span class="card-badge active">ONLINE</span>
+                                    <span id="oracle-mode-badge" style="font-family: var(--font-heading); font-size: 8px; font-weight: 800; letter-spacing: 0.5px; color: var(--text-muted); margin-left: 8px;">OFFLINE</span>
+                                </div>
+                                <div class="card-body chat-body">
+                                    <div class="chat-history" id="oracle-chat-history">
+                                        <!-- Default Welcome Message -->
+                                        <div class="chat-message system">
+                                            <div class="message-sender">SYSTEM ORACLE CORE</div>
+                                            <div class="message-content">
+                                                Welcome to Pitch-Vision AI. I am monitoring the optical tracking feed (10Hz) and player biometric telemetry. Select a preset query or draw a play on the 3D Telestrator to initiate custom analysis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-presets">
+                                        <button class="preset-btn" data-query="switch">ANALYZE FRANCE 80' TACTICAL SWITCH</button>
+                                        <button class="preset-btn" data-query="volley">EXPLAIN MBAPPE 82' VOLLEY GAP</button>
+                                        <button class="preset-btn" data-query="law12">EXPLAIN THE VAR LAW 12 PENALTY RULES</button>
+                                    </div>
+                                    <div class="chat-input-wrapper">
+                                        <input type="text" id="oracle-chat-input" placeholder="Query Granite tactical coordinator...">
+                                        <button id="oracle-send-btn">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="22" y1="2" x2="11" y2="13" />
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momentum Shift Breakdown Card -->
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>MOMENTUM DEGRADATION & TACTICAL ROOT CAUSES</h3>
+                                <span class="card-tag">ATTRIBUTION MATRIX</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="root-cause-honeycomb">
+                                    <div class="hex-capsule hex-red">
+                                        <div class="hex-inner">
+                                            <span class="hex-badge">45% IMPACT</span>
+                                            <h4>DEFENSIVE GAP</h4>
+                                            <p>Argentina backline width expanded by 6.4m under Coman's wide pressure, stretching cb gaps.</p>
+                                        </div>
+                                    </div>
+                                    <div class="hex-capsule hex-orange">
+                                        <div class="hex-inner">
+                                            <span class="hex-badge">35% IMPACT</span>
+                                            <h4>RECOVERY LAG</h4>
+                                            <p>De Paul and Mac Allister heart rate recovery delay, delaying transition blocking.</p>
+                                        </div>
+                                    </div>
+                                    <div class="hex-capsule hex-cyan">
+                                        <div class="hex-inner">
+                                            <span class="hex-badge">20% IMPACT</span>
+                                            <h4>ZONE 14 SPACE</h4>
+                                            <p>Thuram interior runs pinned CBs, creating vacated box edge for Mbappe volley.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- View 2: Tactical Telestrator -->
+                <section class="workspace-tab-content" id="telestrator">
+                    <div class="telestrator-layout">
+                        
+                        <!-- Control Sidebar / Tool Panel -->
+                        <div class="telestrator-control-panel">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>CAMERA PERSPECTIVES</h3>
+                                </div>
+                                <div class="card-body flex-col gap-10">
+                                    <button class="cam-btn active" id="cam-tactical">TACTICAL ELEVATION (75°)</button>
+                                    <button class="cam-btn" id="cam-broadcast">BROADCAST SIMULATOR (45°)</button>
+                                    <button class="cam-btn" id="cam-var">VAR PITCH HORIZON (15°)</button>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>TELESTRATOR TOOLBOX</h3>
+                                </div>
+                                <div class="card-body flex-col gap-10">
+                                    <div class="tool-toggle-wrapper">
+                                        <button class="tool-btn active" id="tool-run">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M12 2v20M17 5l-5-3-5 3" stroke="#FF0033" />
+                                            </svg>
+                                            <span>DRAW RUN</span>
+                                        </button>
+                                        <button class="tool-btn" id="tool-pass">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 12c4-8 14-8 18 0" stroke="#FFFFFF" stroke-dasharray="3" />
+                                            </svg>
+                                            <span>DRAW PASS</span>
+                                        </button>
+                                    </div>
+                                    <div class="tool-toggle-wrapper">
+                                        <button class="tool-btn" id="tool-measure">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="4" y1="9" x2="20" y2="9" />
+                                                <line x1="4" y1="15" x2="20" y2="15" />
+                                                <line x1="8" y1="9" x2="8" y2="15" />
+                                                <line x1="16" y1="9" x2="16" y2="15" />
+                                            </svg>
+                                            <span>MEASURE GAP</span>
+                                        </button>
+                                        <button class="tool-btn" id="clear-sketch">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                            </svg>
+                                            <span>CLEAR SKETCH</span>
+                                        </button>
+                                    </div>
+                                    <button class="action-btn-primary" id="analyze-play-btn">ANALYZE SKETCHED PLAY</button>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card flex-grow">
+                                <div class="card-header">
+                                    <h3>SKETCH INTERPRETATION</h3>
+                                    <span class="card-badge active">ONLINE</span>
+                                    <span id="sketch-mode-badge" style="font-family: var(--font-heading); font-size: 8px; font-weight: 800; letter-spacing: 0.5px; color: var(--text-muted); margin-left: 8px;">OFFLINE</span>
+                                </div>
+                                <div class="card-body text-muted scroll-y max-h-120" id="sketch-analysis-result">
+                                    Use the telestrator tools to draw passing paths, attacking runs, or gaps directly on the 2.5D pitch, then click <strong>Analyze Sketched Play</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Canvas Workspace -->
+                        <div class="telestrator-workspace-card dashboard-card">
+                            <div class="card-header">
+                                <div class="header-flex">
+                                    <h3>2.5D ISOMETRIC BROADCAST TELESTRATOR</h3>
+                                    <div class="mode-indicator active" id="telestrator-status">PLAYBACK PAUSED (DRAW ACTIVE)</div>
+                                </div>
+                            </div>
+                            <div class="card-body pitch-canvas-wrapper" id="pitch-container">
+                                <canvas id="pitch-canvas"></canvas>
+                                
+                                <!-- Playback Controls Overlay -->
+                                <div class="canvas-hud-overlay">
+                                    <button class="hud-play-btn" id="play-pause-btn">
+                                        <svg id="play-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                        <svg id="pause-icon" class="hidden" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="6" y1="4" x2="6" y2="20" />
+                                            <line x1="18" y1="4" x2="18" y2="20" />
+                                        </svg>
+                                    </button>
+                                    <div class="timeline-slider-wrapper">
+                                        <span class="time-label">79:45</span>
+                                        <input type="range" id="timeline-range" min="0" max="100" value="0">
+                                        <span class="time-label">83:00</span>
+                                    </div>
+                                    <div class="match-time-large" id="sim-time-display">79:45</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <!-- View 3: VAR Calibration Lab -->
+                <section class="workspace-tab-content" id="var-lab">
+                    <div class="var-lab-layout">
+                        
+                        <!-- Left Panel: Calibration Selector & Sliders -->
+                        <div class="var-calibration-controls">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>VAR DECISION CRITERIA SELECTOR</h3>
+                                </div>
+                                <div class="card-body flex-col gap-10">
+                                    <button class="var-selector-btn active" data-type="offside">
+                                        <h4>DECISION A: TIGHT OFFSIDE CHECK</h4>
+                                        <span>82:12 - Thuram header path to Mbappe</span>
+                                    </button>
+                                    <button class="var-selector-btn" data-type="handball">
+                                        <h4>DECISION B: HANDBALL CHECK</h4>
+                                        <span>117:15 - Montiel blocking cross in penalty box</span>
+                                    </button>
+                                    <button class="var-selector-btn" data-type="tackle">
+                                        <h4>DECISION C: TACKLE SEVERITY</h4>
+                                        <span>80:02 - Otamendi challenge on Kolo Muani</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Contextual Calibration Sliders -->
+                            <div class="dashboard-card" id="calibrator-card-offside">
+                                <div class="card-header">
+                                    <h3>HAWK-EYE PERSPECTIVE ALIGNMENT</h3>
+                                </div>
+                                <div class="card-body flex-col gap-15">
+                                    <p class="text-muted">Drag the vertical guidelines on the viewport canvas to align with the defender's sleeve line and the attacker's toe coordinate.</p>
+                                    <div class="slider-group">
+                                        <div class="slider-label-row">
+                                            <span>DEFENDER ALIGNMENT (BLUE)</span>
+                                            <span id="slider-defender-val">340px</span>
+                                        </div>
+                                        <input type="range" id="slider-defender-line" min="200" max="500" value="340">
+                                    </div>
+                                    <div class="slider-group">
+                                        <div class="slider-label-row">
+                                            <span>ATTACKER ALIGNMENT (RED)</span>
+                                            <span id="slider-attacker-val">325px</span>
+                                        </div>
+                                        <input type="range" id="slider-attacker-line" min="200" max="500" value="325">
+                                    </div>
+                                    <div class="calibration-output-box">
+                                        <div class="metric-row">
+                                            <span>Pixel Delta:</span>
+                                            <span id="px-delta-val">-15px</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>Real Distance Offset:</span>
+                                            <span class="text-crimson font-bold" id="var-offset-cm">-3.4 cm (OFFSIDE)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card hidden" id="calibrator-card-handball">
+                                <div class="card-header">
+                                    <h3>IFAB SILHOUETTE CALIBRATOR</h3>
+                                </div>
+                                <div class="card-body flex-col gap-15">
+                                    <p class="text-muted">Rotate the skeletal shoulder joint angle to calculate the enlargement of the player's natural body boundary cylinder.</p>
+                                    <div class="slider-group">
+                                        <div class="slider-label-row">
+                                            <span>ARM ABDUCTION ANGLE</span>
+                                            <span id="slider-arm-val">45°</span>
+                                        </div>
+                                        <input type="range" id="slider-arm-angle" min="0" max="180" value="45">
+                                    </div>
+                                    <div class="calibration-output-box">
+                                        <div class="metric-row">
+                                            <span>Silhouette Area Expansion:</span>
+                                            <span id="silhouette-expansion-val">+8.4%</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>Violation Threshold Status:</span>
+                                            <span class="text-green font-bold" id="handball-status-val">NATURAL STANCE (NO FOUL)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card hidden" id="calibrator-card-tackle">
+                                <div class="card-header">
+                                    <h3>KINETIC TACKLE FORCE DYNAMICS</h3>
+                                </div>
+                                <div class="card-body flex-col gap-15">
+                                    <p class="text-muted">Adjust tackle entry speed to calculate collision severity, stud exposure index, and joint endangerment risk.</p>
+                                    <div class="slider-group">
+                                        <div class="slider-label-row">
+                                            <span>TACKLE VELOCITY</span>
+                                            <span id="slider-velocity-val">4.2 m/s</span>
+                                        </div>
+                                        <input type="range" id="slider-tackle-velocity" min="10" max="80" value="42">
+                                    </div>
+                                    <div class="calibration-output-box">
+                                        <div class="metric-row">
+                                            <span>Calculated Force:</span>
+                                            <span id="force-g-val">3.8 G</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>Rule Enforcement Verdict:</span>
+                                            <span class="text-yellow font-bold" id="tackle-verdict-val">YELLOW CARD (RECKLESS PLAY)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Canvas Viewport & Granite Rule Explainer -->
+                        <div class="var-lab-viewport-pane">
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>VAR CAMERA VIEWPORT (HAWK-EYE CALIBRATION SYSTEM)</h3>
+                                </div>
+                                <div class="card-body var-canvas-container" id="var-canvas-wrapper">
+                                    <canvas id="var-canvas"></canvas>
+                                    
+                                    <!-- Draggable Magnifying Zoom Lens HUD -->
+                                    <div class="zoom-lens-hud" id="zoom-loupe">
+                                        <div class="zoom-title">HAWK-EYE SUB-PIXEL LENS</div>
+                                        <canvas id="zoom-canvas" width="100" height="100"></canvas>
+                                        <div class="zoom-crosshair"></div>
+                                        <div class="zoom-meta" id="zoom-pixel-coord">192.1, 412.3</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>IBM GRANITE EXPLAINABLE VAR COMPANION</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="var-explainer-rule-box">
+                                        <div class="rule-title-row">
+                                            <span class="rule-law-badge">IFAB LAW 11</span>
+                                            <h4 id="var-rule-law-name">OFFSIDE CHECK - INTERACTIVE RESOLUTION</h4>
+                                        </div>
+                                        <p id="var-explainer-text" class="var-explainer-paragraph">
+                                            Under IFAB Law 11, a player is in an offside position if any part of their head, torso, or feet is nearer to the opponent's goal line than both the ball and the second-last opponent. The calibration lines currently show the attacker's leading boot is behind the defender's sleeve boundary cylinder. Verdict: ON PLAY.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- View 4: Player Biometrics HUD -->
+                <section class="workspace-tab-content" id="biometrics">
+                    <div class="biometrics-layout">
+                        
+                        <!-- Left Panel: Player Selector & Stats -->
+                        <div class="bio-control-panel">
+                            <div class="player-selector-header">
+                                <button class="player-tab-btn active" data-player="messi">
+                                    <div class="bio-scan-line"></div>
+                                    <span class="avatar-circle messi"></span>
+                                    <div class="btn-text">
+                                        <span class="p-name">LIONEL MESSI</span>
+                                        <span class="p-team">ARG - ATTACKER</span>
+                                    </div>
+                                </button>
+                                <button class="player-tab-btn" data-player="mbappe">
+                                    <div class="bio-scan-line"></div>
+                                    <span class="avatar-circle mbappe"></span>
+                                    <div class="btn-text">
+                                        <span class="p-name">KYLIAN MBAPPÉ</span>
+                                        <span class="p-team">FRA - FORWARD</span>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>PHYSICAL STRAIN INDEX (PSI)</h3>
+                                </div>
+                                <div class="card-body flex-col gap-15">
+                                    <div class="radial-gauge-container">
+                                        <!-- Radial Strain Gauge SVG -->
+                                        <svg viewBox="0 0 120 120" width="100" height="100">
+                                            <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10" />
+                                            <circle id="bio-strain-gauge" cx="60" cy="60" r="50" fill="none" stroke="#FF2D55" stroke-width="10" 
+                                                stroke-dasharray="314" stroke-dashoffset="100" transform="rotate(-90 60 60)" />
+                                            <text x="60" y="65" fill="#FFFFFF" font-size="18" font-family="Outfit" font-weight="bold" text-anchor="middle" id="bio-strain-text">72.4</text>
+                                            <text x="60" y="80" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Outfit" text-anchor="middle">STRAIN %</text>
+                                        </svg>
+                                    </div>
+                                    <div class="bio-metric-table">
+                                        <div class="metric-row">
+                                            <span>TOTAL DISTANCE</span>
+                                            <span class="font-bold" id="bio-dist-val">8.42 km</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>SPRINT COUNT</span>
+                                            <span class="font-bold" id="bio-sprints-val">18 sprints</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>MAX SPEED</span>
+                                            <span class="font-bold" id="bio-speed-val">29.4 km/h</span>
+                                        </div>
+                                        <div class="metric-row">
+                                            <span>STAMINA INDEX</span>
+                                            <span class="font-bold text-yellow" id="bio-stamina-val">42%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Animated Fluid Dehydration Flask -->
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>HYDRATION & SWEAT LEVEL</h3>
+                                </div>
+                                <div class="card-body flex-row justify-center items-center gap-20">
+                                    <div class="flask-container">
+                                        <div class="flask-liquid" id="flask-fill-level"></div>
+                                        <div class="flask-measurements">
+                                            <span>100%</span>
+                                            <span>75%</span>
+                                            <span>50%</span>
+                                            <span>25%</span>
+                                        </div>
+                                    </div>
+                                    <div class="flask-details">
+                                        <span class="stat-label">SWEAT RATE</span>
+                                        <div class="stat-value text-cyan" id="bio-sweat-val">1.2 <span class="stat-unit">L/hour</span></div>
+                                        <span class="stat-label mt-10">TOTAL FLUID LOSS</span>
+                                        <div class="stat-value" id="bio-fluid-loss-val">1.84 L</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Telemetry Graphs & Dials -->
+                        <div class="bio-telemetry-pane">
+                            <!-- Top: Live Exertion ECG / HR Chart -->
+                            <div class="dashboard-card md-span-2">
+                                <div class="card-header">
+                                    <div class="header-flex">
+                                        <h3>REAL-TIME CARDIORESPIROTARY ECG STREAM</h3>
+                                        <div class="live-pulse">
+                                            <span class="pulse-red"></span>
+                                            <span id="bio-live-hr-display">165 BPM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ecg-canvas-wrapper">
+                                        <canvas id="ecg-canvas"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Row: G-Force Acceleration & Radar Chart -->
+                            <div class="bio-dials-grid">
+                                <div class="dashboard-card">
+                                    <div class="card-header">
+                                        <h3>DECELERATION & CUT FORCES (G-FORCE)</h3>
+                                    </div>
+                                    <div class="card-body flex-col items-center justify-center">
+                                        <div class="gforce-container">
+                                            <canvas id="gforce-canvas" width="160" height="160"></canvas>
+                                            <div class="gforce-overlay-val" id="gforce-overlay-val">1.42G</div>
+                                        </div>
+                                        <span class="text-muted mt-10 text-center font-12">Peak lateral cut force during accelerations</span>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-card">
+                                    <div class="card-header">
+                                        <h3>PHYSIO-COGNITIVE RADAR PROFILE</h3>
+                                    </div>
+                                    <div class="card-body flex-col items-center justify-center">
+                                        <canvas id="radar-canvas" width="160" height="160"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- View 5: Agent Network Topology -->
+                <section class="workspace-tab-content" id="agent-network">
+                    <div class="agent-network-header">
+                        <div class="header-left">
+                            <div class="card-icon red-bg-glow">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FF0033" stroke-width="2">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                    <polyline points="2 17 12 22 22 17" />
+                                    <polyline points="2 12 12 17 22 12" />
+                                </svg>
+                            </div>
+                            <div class="header-text">
+                                <h2>COGNITIVE AGENT TOPOLOGY</h2>
+                                <span class="header-sub">PITCH-VISION DISTRIBUTED ENGINE DATA FLOWS</span>
+                            </div>
+                        </div>
+                        <div class="header-right">
+                            <span class="pulse-green"></span>
+                            <span class="network-status-label">ALL CORE SUB-AGENTS STABLE</span>
+                        </div>
+                    </div>
+
+                    <div class="topology-dashboard-layout">
+                        <!-- Left Panel: SVG Network Graph -->
+                        <div class="topology-map-wrapper dashboard-card">
+                            <div class="card-header">
+                                <h3>INTERACTIVE NETWORK HOLOGRAPH</h3>
+                                <span class="card-tag">TAP NODES TO INSPECT</span>
+                            </div>
+                            <div class="card-body map-canvas-container">
+                                <!-- Interactive SVG Topology Graph -->
+                                <svg id="topology-svg-graph" viewBox="0 0 500 420" width="100%" height="100%">
+                                    <defs>
+                                        <!-- Glow Filter for Pulsing Nodes -->
+                                        <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="5" result="blur" />
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                        </filter>
+                                    </defs>
+                                    
+                                    <!-- Orbiting Circular Guideline -->
+                                    <circle cx="250" cy="210" r="130" stroke="rgba(255,255,255,0.02)" stroke-width="1.5" fill="none" stroke-dasharray="4,8" />
+                                    <circle cx="250" cy="210" r="70" stroke="rgba(255, 0, 51, 0.05)" stroke-width="1" fill="none" />
+                                    
+                                    <!-- Connection Lines to Central Core -->
+                                    <!-- TACTICS node at (250, 80) -->
+                                    <line id="line-tactics" x1="250" y1="210" x2="250" y2="80" stroke="rgba(255, 0, 51, 0.25)" stroke-width="2" />
+                                    <!-- BIOMETRICS node at (380, 210) -->
+                                    <line id="line-biometrics" x1="250" y1="210" x2="380" y2="210" stroke="rgba(255, 0, 51, 0.25)" stroke-width="2" />
+                                    <!-- CONTEXT node at (250, 340) -->
+                                    <line id="line-context" x1="250" y1="210" x2="250" y2="340" stroke="rgba(255, 0, 51, 0.25)" stroke-width="2" />
+                                    <!-- REGULATIONS node at (120, 210) -->
+                                    <line id="line-regulations" x1="250" y1="210" x2="120" y2="210" stroke="rgba(255, 0, 51, 0.25)" stroke-width="2" />
+
+                                    <!-- Animated Data Packets (Pulsing Dots) -->
+                                    <circle id="packet-tactics" cx="250" cy="210" r="3.5" fill="#FF0033" />
+                                    <circle id="packet-biometrics" cx="250" cy="210" r="3.5" fill="#FFFFFF" />
+                                    <circle id="packet-context" cx="250" cy="210" r="3.5" fill="#FF0033" />
+                                    <circle id="packet-regulations" cx="250" cy="210" r="3.5" fill="#FFFFFF" />
+
+                                    <!-- Central Node: IBM Granite Core -->
+                                    <g class="topology-node central-core" id="node-core">
+                                        <circle cx="250" cy="210" r="28" fill="#0A0F1D" stroke="#FFAE00" stroke-width="3" filter="url(#glow-filter)" />
+                                        <circle cx="250" cy="210" r="36" fill="none" stroke="#FFAE00" stroke-width="1" stroke-dasharray="4,4" class="slow-spin" />
+                                        <text x="250" y="214" fill="#FFFFFF" font-family="Outfit" font-size="10" font-weight="900" text-anchor="middle">CORE</text>
+                                    </g>
+
+                                    <!-- Orbiting Node 1: Tactical Diagnostics Agent -->
+                                    <g class="topology-node agent-node" id="node-tactics" data-agent="tactics">
+                                        <circle cx="250" cy="80" r="20" fill="#0A0F1D" stroke="#FF0033" stroke-width="2.5" />
+                                        <circle cx="250" cy="80" r="26" fill="none" stroke="rgba(255, 0, 51, 0.2)" stroke-width="1" class="pulse-ring" />
+                                        <!-- Pen tool path icon representation -->
+                                        <path d="M246 76 L250 84 L254 76" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+                                        <text x="250" y="116" fill="rgba(255,255,255,0.7)" font-family="Outfit" font-size="9" font-weight="700" text-anchor="middle">TACTICAL</text>
+                                    </g>
+
+                                    <!-- Orbiting Node 2: Player Biometrics Agent -->
+                                    <g class="topology-node agent-node" id="node-biometrics" data-agent="biometrics">
+                                        <circle cx="380" cy="210" r="20" fill="#0A0F1D" stroke="#FFFFFF" stroke-width="2.5" />
+                                        <circle cx="380" cy="210" r="26" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" class="pulse-ring" />
+                                        <!-- Mini ECG icon inside node -->
+                                        <path d="M371 210 H375 L378 204 L381 216 L384 208 L386 210 H390" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+                                        <text x="380" y="246" fill="rgba(255,255,255,0.7)" font-family="Outfit" font-size="9" font-weight="700" text-anchor="middle">BIOMETRICS</text>
+                                    </g>
+
+                                    <!-- Orbiting Node 3: Match Context Agent -->
+                                    <g class="topology-node agent-node" id="node-context" data-agent="context">
+                                        <circle cx="250" cy="340" r="20" fill="#0A0F1D" stroke="#FF0033" stroke-width="2.5" />
+                                        <circle cx="250" cy="340" r="26" fill="none" stroke="rgba(255,0,51,0.2)" stroke-width="1" class="pulse-ring" />
+                                        <rect x="245" y="335" width="10" height="10" rx="1.5" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+                                        <text x="250" y="376" fill="rgba(255,255,255,0.7)" font-family="Outfit" font-size="9" font-weight="700" text-anchor="middle">CONTEXT</text>
+                                    </g>
+
+                                    <!-- Orbiting Node 4: IFAB Regulations Supervisor -->
+                                    <g class="topology-node agent-node" id="node-regulations" data-agent="regulations">
+                                        <circle cx="120" cy="210" r="20" fill="#0A0F1D" stroke="#FFFFFF" stroke-width="2.5" />
+                                        <circle cx="120" cy="210" r="26" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" class="pulse-ring" />
+                                        <path d="M115 205 H125 V215 H115 Z" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+                                        <text x="120" y="246" fill="rgba(255,255,255,0.7)" font-family="Outfit" font-size="9" font-weight="700" text-anchor="middle">REGULATIONS</text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Agent Inspector Details -->
+                        <div class="agent-inspect-card dashboard-card" id="agent-inspector-panel">
+                            <div class="card-header">
+                                <div class="header-flex">
+                                    <h3 id="inspect-agent-name">IBM GRANITE ENGINE</h3>
+                                    <span class="capsule-badge active" id="inspect-agent-status">SUPERVISORY CORE</span>
+                                </div>
+                            </div>
+                            <div class="card-body inspect-container">
+                                <!-- Telemetry mini bar meters -->
+                                <div class="inspect-stats-grid">
+                                    <div class="inspect-stat-gauge">
+                                        <span class="gauge-lbl">CPU WORKLOAD</span>
+                                        <div class="circular-progress-wrapper">
+                                            <svg viewBox="0 0 36 36" class="circular-progress-svg" width="48" height="48">
+                                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3" />
+                                                <path class="circle-fill" id="inspect-cpu-circle" stroke-dasharray="94.8, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#FF0033" stroke-width="3" />
+                                                <text x="18" y="21.5" class="circle-percentage" id="inspect-cpu-text">94.8%</text>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="inspect-stat-badges">
+                                        <div class="mini-badge-row">
+                                            <span class="badge-lbl">LATENCY</span>
+                                            <span class="badge-val text-cyan" id="inspect-latency-val">12 ms</span>
+                                        </div>
+                                        <div class="mini-badge-row">
+                                            <span class="badge-lbl">MEM ALLOC</span>
+                                            <span class="badge-val" id="inspect-memory-val">148.4 MB</span>
+                                        </div>
+                                        <div class="mini-badge-row">
+                                            <span class="badge-lbl">CONSENSUS</span>
+                                            <span class="badge-val text-yellow" id="inspect-consensus-val">98.2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Real-time Streaming console log terminal -->
+                                <div class="inspect-terminal-section">
+                                    <span class="terminal-title">LIVE SYSTEM STDOUT DIAGNOSTIC CONSOLE</span>
+                                    <div class="terminal-stdout" id="inspect-terminal-stdout">Initializing stdout console logging system...
+[INFO] IBM Granite Supervisory Core Online.
+[INFO] Awaiting Agent Node selection target to stream sub-process thread...</div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="inspect-actions">
+                                    <button class="inspect-action-btn border-red" id="btn-recalibrate-agent">FORCE SYNCHRONIZATION</button>
+                                    <button class="inspect-action-btn" id="btn-clear-logs">FLUSH STDOUT BUFFER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Main JavaScript App -->
+    <script src="app.js"></script>
+</body>
+</html>

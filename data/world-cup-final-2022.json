@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "match": {
+    "statsbomb_match_id": 3869685,
+    "competition": "FIFA World Cup",
+    "season": "2022",
+    "stage": "Final",
+    "home_team": "Argentina",
+    "away_team": "France",
+    "score_after_extra_time": "3-3",
+    "shootout": "Argentina won 4-2",
+    "stadium": "Lusail Iconic Stadium"
+  },
+  "source": {
+    "name": "StatsBomb Open Data",
+    "repository": "https://github.com/statsbomb/open-data",
+    "events_url": "https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/3869685.json",
+    "three_sixty_url": "https://raw.githubusercontent.com/statsbomb/open-data/master/data/three-sixty/3869685.json",
+    "attribution": "StatsBomb Open Data. This project is not affiliated with FIFA, IFAB, Hawk-Eye or StatsBomb.",
+    "coordinate_system": "StatsBomb event coordinates use a 120 x 80 pitch. Values in this file are preserved in that coordinate system."
+  },
+  "limitations": [
+    "The data is an event and 360 freeze-frame sample, not a continuous 10 Hz tracking feed.",
+    "Freeze-frame positions do not identify every player and only include players visible to the source camera model.",
+    "Biometric, heart-rate, hydration and collision-force values are not present in this dataset.",
+    "Any tactical interpretation is an AI-assisted explanation, not an official coaching or refereeing decision."
+  ],
+  "moments": {
+    "penalty": {
+      "label": "Kolo Muani wins France's penalty",
+      "display_minute": "79'",
+      "score_before": "Argentina 2-0 France",
+      "evidence": [
+        {
+          "event_id": "87769b1a-bdca-4e9b-b2fd-e8bb95313063",
+          "timestamp": "00:33:13.317",
+          "match_clock": "78:13",
+          "type": "Foul Committed",
+          "team": "Argentina",
+          "player": "Nicolas Otamendi",
+          "location": [12.7, 56.9],
+          "penalty": true
+        },
+        {
+          "event_id": "6cc0d5e2-6999-4006-8a7a-34de4cbe3ffd",
+          "timestamp": "00:34:24.975",
+          "match_clock": "79:24",
+          "type": "Shot",
+          "team": "France",
+          "player": "Kylian Mbappe",
+          "location": [108.0, 40.0],
+          "outcome": "Goal",
+          "statsbomb_xg": 0.7835
+        }
+      ]
+    },
+    "volley": {
+      "label": "France's 10-second equaliser sequence",
+      "display_minute": "81'",
+      "score_before": "Argentina 2-1 France",
+      "evidence": [
+        {
+          "event_id": "2a54f7c5-3dfb-4bf7-b583-41d01c617baa",
+          "match_clock": "80:47",
+          "type": "Duel",
+          "team": "France",
+          "player": "Kingsley Coman",
+          "location": [69.2, 68.0],
+          "outcome": "Won",
+          "under_pressure": true
+        },
+        {
+          "event_id": "bc74169c-e8e1-4b00-b51b-0c4aa74b2cf6",
+          "match_clock": "80:52",
+          "type": "Pass",
+          "player": "Kingsley Coman",
+          "recipient": "Adrien Rabiot",
+          "start": [84.8, 71.2],
+          "end": [78.8, 58.3],
+          "height": "Ground Pass"
+        },
+        {
+          "event_id": "e6cb3fe0-cfee-4672-9986-645c11e20adb",
+          "match_clock": "80:54",
+          "type": "Pass",
+          "player": "Adrien Rabiot",
+          "recipient": "Kylian Mbappe",
+          "start": [79.2, 54.1],
+          "end": [93.1, 24.1],
+          "height": "High Pass"
+        },
+        {
+          "event_id": "45ef8ec8-6ae8-46c7-9ae4-65538e52b622",
+          "match_clock": "80:56",
+          "type": "Pass",
+          "player": "Kylian Mbappe",
+          "recipient": "Marcus Thuram",
+          "start": [93.1, 24.1],
+          "end": [94.8, 36.3],
+          "height": "Low Pass",
+          "under_pressure": true
+        },
+        {
+          "event_id": "7b1441f1-4911-44d7-ac4b-f3f8f11daa76",
+          "match_clock": "80:57",
+          "type": "Pass",
+          "player": "Marcus Thuram",
+          "recipient": "Kylian Mbappe",
+          "start": [94.8, 36.3],
+          "end": [104.8, 30.1],
+          "height": "High Pass"
+        },
+        {
+          "event_id": "03fb2918-e1e7-4ec8-89ff-7bc5531e853d",
+          "match_clock": "80:59",
+          "type": "Shot",
+          "team": "France",
+          "player": "Kylian Mbappe",
+          "location": [104.8, 30.1],
+          "outcome": "Goal",
+          "technique": "Volley",
+          "statsbomb_xg": 0.1017027,
+          "freeze_frame": [
+            { "teammate": false, "actor": false, "keeper": false, "location": [93.4584, 39.1660] },
+            { "teammate": true, "actor": false, "keeper": false, "location": [98.2348, 67.9352] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [98.9900, 36.4868] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [99.2747, 48.1921] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [100.3545, 46.3548] },
+            { "teammate": true, "actor": false, "keeper": false, "location": [100.9880, 38.5712] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [102.1615, 27.9436] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [102.8101, 43.3255] },
+            { "teammate": false, "actor": false, "keeper": false, "location": [103.6196, 37.2154] },
+            { "teammate": true, "actor": false, "keeper": false, "location": [104.2274, 43.9102] },
+            { "teammate": true, "actor": true, "keeper": false, "location": [104.8, 30.1] },
+            { "teammate": false, "actor": false, "keeper": true, "location": [116.3, 39.4782] }
+          ]
+        }
+      ]
+    },
+    "goal": {
+      "label": "Messi follows the saved shot",
+      "display_minute": "108'",
+      "score_before": "Argentina 2-2 France",
+      "evidence": [
+        {
+          "event_id": "25ac6afd-9d87-4d4a-a79d-13d413233505",
+          "match_clock": "107:54",
+          "type": "Pass",
+          "player": "Enzo Fernandez",
+          "recipient": "Lautaro Martinez",
+          "start": [95.4, 49.4],
+          "end": [109.3, 56.9]
+        },
+        {
+          "event_id": "40cbfd91-87d9-4df8-a575-533b5c26767f",
+          "match_clock": "107:57",
+          "type": "Shot",
+          "player": "Lautaro Martinez",
+          "location": [114.4, 52.0],
+          "outcome": "Saved",
+          "statsbomb_xg": 0.10407211
+        },
+        {
+          "event_id": "54b889ec-6026-49ea-a913-e883dbe6e301",
+          "match_clock": "107:58",
+          "type": "Shot",
+          "player": "Lionel Messi",
+          "location": [116.6, 43.0],
+          "outcome": "Goal",
+          "technique": "Half Volley",
+          "statsbomb_xg": 0.48840353
+        }
+      ]
+    }
+  }
+}
